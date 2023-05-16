@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+      Resultado
+{% endblock %}
+
+{% block content %}
+<h1>Resultados de la Consulta</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Ciudad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for resultado in resultado %}
+                <tr>
+                    <td>{{ resultado[1] }}</td>
+                    <td>{{ resultado[2] }}</td>
+                    <td>{{ resultado[3] }}</td>
+                    <td>{{ resultado[4] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

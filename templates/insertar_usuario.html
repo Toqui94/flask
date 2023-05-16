@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+      Coches
+{% endblock %}
+
+{% block content %}
+    {% if coche %}
+         <h1>Editar usuario: {{usuario.1}} {{usuario.2}}</h1>
+    {% else %}
+          <h1>Insertar usuario</h1> 
+    {% endif %}     
+    
+    <form action="" method="POST">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" {% if usuario %} value="{{usuario.1}}" {% endif %} />
+        <br/><br/>
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" {% if usuario %} value="{{usuario.2}}" {% endif %} />   
+        <br/><br/>
+        <label for="edad">Edad</label>
+        <input type="number" name="edad" {% if usuario %} value="{{usuario.3}}" {% endif %} />
+        <br/><br/>
+        <label for="ciudad">Ciudad</label>
+        <input type="text" name="ciudad" {% if usuario %} value="{{usuario.4}}" {% endif %} />
+        <br/><br/>
+        <input type="submit" value="Guardar"/>
+    </form>
+
+{% endblock %}
+
+

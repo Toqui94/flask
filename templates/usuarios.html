@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+      Usuarios
+{% endblock %}
+
+{% block content %}
+
+    <h1>Usuarios</h1>
+
+    <!--Recorrido de la información-->
+    <!--Creación variable "usuario" que almacenará info de la variable "usuarios" del método-->
+    {% for usuario in usuarios %}
+    <h2> <a>{{usuario.1}}</a> </h2>
+    <p> {{usuario.2}} | {{usuario.3}} </p>
+    <p> {{usuario.4}} </p>
+    <p>
+        <a href="{{ url_for('editar_usuario', usuario_id=usuario.0) }}">Editar</a>
+        <a href="{{ url_for('borrar_usuario', usuario_id=usuario.0) }}">Eliminar</a>
+    </p>
+
+    {% endfor %}
+
+{% endblock %}
+

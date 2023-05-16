@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+      Consultas
+{% endblock %}
+
+{% block content %}
+
+    <h1>Consulta de Usuarios</h1>
+        <form action="{{ url_for('resultado') }}" method="post">
+            <label for="columna">Seleccione una columna:</label>
+            <select name="columna" id="columna">
+                {% for columna in columnas %}
+                    <option value="{{ columna[0] }}">{{ columna[0] }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <label for="valor">Ingrese el valor a buscar:</label>
+            <input type="text" name="valor" id="valor" required>
+            <br>
+            <input type="submit" value="Buscar">
+        </form>
+        
+{% endblock %}
